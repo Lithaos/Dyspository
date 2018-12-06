@@ -33,6 +33,7 @@ public class RegisterController {
 		if (result.hasErrors()) {
 			return "/register/driver";
 		} else {
+
 			userRepository.save(user);
 			return "home";
 		}

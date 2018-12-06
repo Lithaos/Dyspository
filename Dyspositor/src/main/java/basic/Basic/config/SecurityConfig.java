@@ -13,8 +13,8 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	private String userQuery = "select email, password, 1 from user where lower(email) = lower(?)";
-	private String roleQuery = "select email, role from user where lower(email) = lower(?)";
+	private String userQuery = "select email, password, 1 from users where lower(email) = lower(?)";
+	private String roleQuery = "select email, role from users where lower(email) = lower(?)";
 
 	@Autowired
 	private DataSource dataSource;
