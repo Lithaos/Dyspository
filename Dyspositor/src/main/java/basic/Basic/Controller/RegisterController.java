@@ -1,5 +1,7 @@
 package basic.Basic.Controller;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +31,18 @@ public class RegisterController {
 	}
 
 	@RequestMapping(value = "/driver", method = RequestMethod.POST)
-	public String saveDriver(@Valid User user, BindingResult result) {
+	public String saveDriver(HttpServletRequest request, @Valid User user, BindingResult result) {
 		if (result.hasErrors()) {
 			return "/register/driver";
 		} else {
 
 			userRepository.save(user);
+			try {
+				request.login(user.getEmail(), user.getPassword());
+			} catch (ServletException e) {
+
+				e.printStackTrace();
+			}
 			return "home";
 		}
 	}
