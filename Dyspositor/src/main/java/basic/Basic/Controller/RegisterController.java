@@ -35,12 +35,11 @@ public class RegisterController {
 		if (result.hasErrors()) {
 			return "/register/driver";
 		} else {
-
+			user.setRole("driver");
 			userRepository.save(user);
 			try {
 				request.login(user.getEmail(), user.getPassword());
 			} catch (ServletException e) {
-
 				e.printStackTrace();
 			}
 			return "home";
