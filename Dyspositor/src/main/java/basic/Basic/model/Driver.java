@@ -1,34 +1,19 @@
 package basic.Basic.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity
-public class Driver {
-
-	@Id
-	@GeneratedValue
-	private long id;
+public class Driver extends User {
 
 	private String mark;
 
 	private String model;
 
-	private long capacity;
+	private Long capacity;
 
-	@OneToOne
-	@JoinColumn(name = "id")
-	private User user;
+	private Long year;
 
-	public Driver(String mark, String model, long capacity) {
-		super();
-		this.mark = mark;
-		this.model = model;
-		this.capacity = capacity;
-	}
+	private String plate;
 
 	public String getMark() {
 		return mark;
@@ -46,16 +31,28 @@ public class Driver {
 		this.model = model;
 	}
 
-	public long getCapacity() {
+	public Long getYear() {
+		return year;
+	}
+
+	public void setYear(Long year) {
+		this.year = year;
+	}
+
+	public String getPlate() {
+		return plate;
+	}
+
+	public void setPlate(String plate) {
+		this.plate = plate;
+	}
+
+	public Long getCapacity() {
 		return capacity;
 	}
 
-	public void setCapacity(long capacity) {
+	public void setCapacity(Long capacity) {
 		this.capacity = capacity;
-	}
-
-	public long getId() {
-		return id;
 	}
 
 }

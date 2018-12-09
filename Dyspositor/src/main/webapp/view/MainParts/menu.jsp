@@ -23,7 +23,8 @@
         <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </sec:authorize>
         <sec:authorize access="isAuthenticated()">
-        <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+         <li><a href="/myaccount"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+        <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         </sec:authorize>
       </ul>
     </div>

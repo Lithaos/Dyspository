@@ -82,3 +82,8 @@
  .or{
    margin-top: 50%;
  }
+
+ .rightPart
+ {
+   border-left: 1px solid #d6d6c2;
+ }

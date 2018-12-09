@@ -3,7 +3,6 @@ package basic.Basic.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
@@ -30,9 +29,6 @@ public class User {
 	private String surname;
 
 	private String role;
-
-	@OneToOne
-	private Driver driver;
 
 	public String getEmail() {
 		return email;
@@ -68,14 +64,6 @@ public class User {
 
 	public void setSurname(String surname) {
 		this.surname = surname;
-	}
-
-	public Driver getDriver() {
-		return driver;
-	}
-
-	public void setDriver(Driver driver) {
-		this.driver = driver;
 	}
 
 	public String getRole() {
