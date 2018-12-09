@@ -1,5 +1,6 @@
 package basic.Basic.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,6 +18,7 @@ public class User {
 
 	@Size(min = 3, message = "Musisz podać email!")
 	@Email(message = "Musisz podać poprawny email")
+	@Column(unique = true)
 	private String email;
 
 	@Size(min = 3, message = "Hasło musi mieć conajmniej 3 znaki")

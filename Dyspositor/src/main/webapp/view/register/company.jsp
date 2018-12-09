@@ -162,10 +162,10 @@
 					</div>
 					<div class="form-group ">
 						<form:button id="register" name="register"
-							class="btn btn-primary btn-lg btn-block login-button">Register</form:button>
+							class="btn btn-primary btn-lg btn-block login-button">Zarejestruj</form:button>
 					</div>
 					<div class="login-register">
-						<a href="/login">Login</a>
+						<a href="/login">Zaloguj</a>
 					</div>
 
 

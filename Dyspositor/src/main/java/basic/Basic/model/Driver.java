@@ -55,4 +55,9 @@ public class Driver extends User {
 		this.capacity = capacity;
 	}
 
+	public Driver() {
+		super();
+		setRole("driver");
+	}
+
 }

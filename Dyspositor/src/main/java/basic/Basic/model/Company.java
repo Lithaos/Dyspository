@@ -55,4 +55,9 @@ public class Company extends User {
 		this.phone = phone;
 	}
 
+	public Company() {
+		super();
+		setRole("company");
+	}
+
 }
