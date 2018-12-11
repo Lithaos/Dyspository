@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
@@ -31,6 +32,17 @@ public class User {
 	private String surname;
 
 	private String role;
+
+	@OneToOne
+	private Offert offert;
+
+	public Offert getOffert() {
+		return offert;
+	}
+
+	public void setOffert(Offert offert) {
+		this.offert = offert;
+	}
 
 	public String getEmail() {
 		return email;
