@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import basic.Basic.model.AddresPoint;
+import basic.Basic.model.Offert;
 import basic.Basic.model.User;
 import basic.Basic.repository.UserRepository;
 
@@ -21,7 +22,7 @@ public class OffertsController {
 	private UserRepository userRepository;
 
 	@RequestMapping(value = "/offer", method = RequestMethod.GET)
-	private String newOffer(Model model, Principal principal) {
+	private String newOffer(@Valid AddresPoint point, Model model, Principal principal) {
 		String userName = (principal != null ? principal.getName() : "ANONYMOUS");
 		if (userName.equals("ANONYMOUS")) {
 			return "login";
@@ -35,7 +36,7 @@ public class OffertsController {
 	}
 
 	@RequestMapping(value = "/offer", method = RequestMethod.POST)
-	private String newOffer(@Valid AddresPoint point, Model model, Principal principal) {
+	private String postNewOffer(@Valid AddresPoint point, Model model, Principal principal) {
 		String userName = (principal != null ? principal.getName() : "ANONYMOUS");
 		if (userName.equals("ANONYMOUS")) {
 			return "login";
@@ -43,6 +44,8 @@ public class OffertsController {
 			User user = userRepository.findByEmail(userName);
 			if (user != null) {
 				model.addAttribute("userId", user.getId());
+				user.setOffert(new Offert());
+				userRepository.save(user);
 			}
 			return "offerts/start";
 		}
