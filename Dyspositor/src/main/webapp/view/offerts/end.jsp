@@ -5,12 +5,12 @@
 	<%@ include file="../MainParts/menu.jsp"%>
 	<div class="container text-center">
 		<div class="card text-center">
-			<form:form id="offerform" modelAttribute="addresPoint" action="/offer"
+			<form:form id="offerform" modelAttribute="addresPoint" action="/step"
 				method="post">
 				<div class="card card-default">
 					<div class="card-header">
 						<h4 class="card-title">
-							<i class="text-gold"></i> <b>PUNKT POCZĄTKOWY</b>
+							<i class="text-gold"></i> <b>PUNKT KOŃCOWY</b>
 						</h4>
 					</div>
 
@@ -78,7 +78,7 @@
 							</div>
 						</div>
 						<form:button id="start" name="start"
-							class="btn btn-primary btn-lg btn-block login-button">Zapisz punkt początkowy</form:button>
+							class="btn btn-primary btn-lg btn-block login-button">Zapisz punkt końcowy</form:button>
 					</div>
 				</div>
 			</form:form>

@@ -1,24 +1,31 @@
 package basic.Basic.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
+import org.springframework.security.core.Transient;
+
 @Entity
+@Transient
 public class Offert {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@OneToOne
+	@MapsId
 	private User user;
 
-	@OneToOne
+	@OneToOne(cascade = { CascadeType.ALL })
 	private AddresPoint startPoint;
 
-	@OneToOne
+	@OneToOne(cascade = { CascadeType.ALL })
 	private AddresPoint endPoint;
 
 	private float salary;

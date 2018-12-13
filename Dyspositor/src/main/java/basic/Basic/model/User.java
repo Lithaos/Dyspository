@@ -1,8 +1,10 @@
 package basic.Basic.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -14,7 +16,7 @@ import javax.validation.constraints.Size;
 public class User {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
 	@Size(min = 3, message = "Musisz podać email!")
@@ -33,7 +35,7 @@ public class User {
 
 	private String role;
 
-	@OneToOne
+	@OneToOne(cascade = { CascadeType.ALL })
 	private Offert offert;
 
 	public Offert getOffert() {

@@ -2,13 +2,14 @@ package basic.Basic.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class AddresPoint {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	private String country;
@@ -21,7 +22,7 @@ public class AddresPoint {
 
 	private String numberOfBuilding;
 
-	private Long phone;
+	private String phone;
 
 	private String postCode;
 
@@ -67,11 +68,11 @@ public class AddresPoint {
 		this.numberOfBuilding = numberOfBuilding;
 	}
 
-	public Long getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(Long phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
